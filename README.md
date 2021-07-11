@@ -7,7 +7,7 @@ You can either sdownload the source code
 or use git
 ```bash
 cd <path for bvm here>
-git clone https://github.com/GalaxianMonster/bvm
+git clone https://github.com/GalaxianMonster/bvm.git
 ```
 
 ## Getting Started
