@@ -6,7 +6,6 @@ You can either download the source code
 <br>
 or use git
 ```bash
-cd <path for bvm here>
 git clone https://github.com/GalaxianMonster/bvm.git
 ```
 
