@@ -1,4 +1,4 @@
-# Basic Virtual Machine
+# bvm
 Basic Virtual Machine(BVM) is a Bytecode Virtual Machine Implementation
 
 ## Download
