@@ -2,7 +2,7 @@
 Basic Virtual Machine(BVM) is a Bytecode Virtual Machine Implementation
 
 ## Download
-You can either sdownload the source code
+You can either download the source code
 <br>
 or use git
 ```bash
