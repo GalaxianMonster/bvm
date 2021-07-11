@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Check Arguments
+if [ "$#" -lt 1 ];
+then
+    printf "Usage: %s <file>\n" "$0"
+    exit 0
+fi
+
+# Write Output to $1.bbc_info
+/vm/test/print_file $1 $1.bbc >> $1.bbc_info

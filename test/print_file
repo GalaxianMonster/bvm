@@ -1,0 +1,100 @@
+#!/usr/bin/python3
+
+# Python File that can generate a bytecode(for BVM) file(which can only print multiple characters)
+# Needs Python 3(Tested on Python 3.8)
+# Usage: print_file <file to print> <file>
+
+import io
+import sys
+
+class BinaryData():
+    def __init__(self):
+        self.bin_dict = {}
+        self.bin_count = -1
+    def write_byte(self, hbyte1, hbyte2):
+        self.bin_count += 1
+        self.bin_dict[str(self.bin_count)] = (hbyte1 << 4) | hbyte2
+    def write_instruction(self, opcode, reg1, reg2, reg3):
+        self.write_byte(0, (opcode & 0xF0) >> 4)
+        self.write_byte(opcode & 0x0F, reg1)
+        self.write_byte(reg2, reg3)
+    def write_operand(self, byte):
+        self.write_byte(1, (byte & 0xF0) >> 4)
+        self.write_byte(byte & 0x0F, 0)
+    def to_byte_array(self):
+        bin = bytearray(self.bin_count+1)
+        for i in range(self.bin_count+1):
+            bin[i] = self.bin_dict[str(i)]
+        return bin
+
+def print_binary_data(bin_data):
+    print("Magic: ")
+    print("\"\\xF5\\x42\\x56\\x4d\"")
+    print("Bytecode: ")
+    bytes = bin_data.to_byte_array()
+    bytes_count = bin_data.bin_count+1
+    to_print = "\""
+    for i in range(bytes_count):
+        hexbyte = hex(bytes[i])
+        if len(hexbyte) <= 3:
+            hexbyte = "0" + hexbyte[2]
+        else:
+            hexbyte = hexbyte[2] + hexbyte[3]
+        to_print = to_print + "\\x%s" % (hexbyte)
+    to_print = to_print + "\""
+    print(to_print)
+def write_print_char(bin, str, n):
+    # movvb R1, 0
+    bin.write_instruction(2, 0, 0, 0)
+    bin.write_operand(1)
+    bin.write_operand(0)
+
+    # movvb R2, <ascii value of character>
+    bin.write_instruction(2, 1, 0, 0)
+    bin.write_operand(1)
+    bin.write_operand(ord(str[n]))
+
+    # syscall
+    bin.write_instruction(71, 0, 0, 0)
+    return bin
+
+if len(sys.argv) < 3:
+    print("Usage: %s <file to print> <file>" % (sys.argv[0]))
+    exit()
+bin = BinaryData()
+
+####################################
+# Initialize R1 and R2 with Byte 0 #
+####################################
+
+# ldb R1
+bin.write_instruction(61, 0, 0, 0)
+# ldb R2
+bin.write_instruction(61, 1, 0, 0)
+
+########################################################
+# Begin writing instruction for writing each character #
+########################################################
+with io.open(sys.argv[1], "r") as file:
+    file.seek(0, io.SEEK_END)
+    flen = file.tell()
+    file.seek(0, io.SEEK_SET)
+    for i in range(flen):
+        bin = write_print_char(bin, file.read(1), 0)
+bin = write_print_char(bin, "\n", 0)
+
+# Print the binary data
+print_binary_data(bin)
+
+########################################
+# Write to file the magic and bytecode #
+########################################
+with io.open(sys.argv[2], "wb") as file:
+    magic = bytearray(4)
+    magic[0] = 0xF5
+    magic[1] = 66
+    magic[2] = 86
+    magic[3] = 77
+    file.write(magic)
+    file.write(bin.to_byte_array())
+    file.close()

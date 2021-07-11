@@ -1,0 +1,21 @@
+#!/bin/bash
+if [ "$#" -lt 1 ];
+then
+    printf "Usage: $0 <executable name>\n"
+    exit 0
+fi
+
+CC="gcc" # C Compiler
+CFLAGS="-O2 -Wall -I src" # C Compiler Flags
+DIR_BIN="bin" # Bin Directory
+OUTPUT="$1-linux" # Output file name
+DIR_SRC="src" # Source Directory
+CFILES="$DIR_SRC/example/main.c" # C Files
+
+# Build Function
+function build() {
+    $CC -o $DIR_BIN/$OUTPUT $CFILES $CFLAGS
+}
+
+# Run Build
+build

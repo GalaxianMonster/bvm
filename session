@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Building BVM"
+./build-linux bvm
+echo "Setting up session"
+alias bvm-example="./run-linux"
+echo "Done"

@@ -1,0 +1,10 @@
+if you wanna test then
+you can do:
+
+linux:
+    cd <directory to vm folder>
+    ./test/print <your file to print>
+    . session
+    bvm-example -file <your file to print>.bbc
+
+and it will print the file content
