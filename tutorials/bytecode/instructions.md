@@ -45,7 +45,7 @@ so get your hex/binary editors there and right both the magic and instruction we
 and finally we can run it:
 ```bash
 . session
-bvm <your bytecode file here>
+bvm-example <your bytecode file here>
 ```
 <br>
 and done :D
