@@ -5,9 +5,7 @@ They are encoded in a way to represent them
 <br><br>
 
 ## Representing Immediate Values
-In BVM they are ordered in Little Endian(a order which is from the small value to big value)
-
-But first we need to have some info about binary and hex
+First we need to have some info about binary and hex
 
 Binary is used by the computer to present values since it cant represent decimal and it is base 2
 
