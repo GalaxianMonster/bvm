@@ -6,7 +6,9 @@ Still in development(Linux)
 ## Installation
 ```
 git clone https://github.com/GalaxianMonster/bvm.git
-. bvm/install
+cd bvm
+. ./install
+cd ..
 rm -r bvm
 ```
 
