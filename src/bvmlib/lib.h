@@ -26,6 +26,8 @@
 
 #include "internal/vm.h"
 
+#define BVMLIB_VERSION "1.0"
+
 /* Initialize BVM */
 void BVM_init()
 {

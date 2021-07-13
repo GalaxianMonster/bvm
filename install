@@ -14,6 +14,5 @@ then
 fi
 
 cp ./src/bvmlib /usr/local/include/bvmlib -r
-export BVMLIB_VERSION
 
 echo "Installation done."
