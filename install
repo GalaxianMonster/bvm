@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Author: GalaxianMonster 
+# File: install.sh
+# Description: install bvmlib into the system
+
+BVMLIB_VERSION="1.0"
+echo "Installing bvmlib version $VERSION"
+
+if [ -d "/usr/local/include/bvmlib" ];
+then
+	echo "Overwriting existing bvmlib"
+	rm -r /usr/local/include/bvmlib
+fi
+
+cp ./src/bvmlib /usr/local/include/bvmlib -r
+export BVMLIB_VERSION
+
+echo "Installation done."
