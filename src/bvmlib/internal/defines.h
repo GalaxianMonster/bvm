@@ -1,12 +1,20 @@
-#ifndef __INTERNAL_DEFINES_H
-#define __INTERNAL_DEFINES_H
+#ifndef __BVM_INTERNAL_DEFINES_H
+#define __BVM_INTERNAL_DEFINES_H
 #include <stdint.h>
 
 /* byte types */
+#ifndef BYTE
 typedef uint8_t BYTE;
+#endif
+#ifndef WORD
 typedef uint16_t WORD;
+#endif
+#ifndef DWORD
 typedef uint32_t DWORD;
+#endif
+#ifndef QWORD
 typedef uint64_t QWORD;
+#endif
 
 /* registers */
 #define R1 0

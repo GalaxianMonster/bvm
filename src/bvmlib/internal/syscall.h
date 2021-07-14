@@ -1,5 +1,5 @@
-#ifndef __INTERNAL_SYSCALL_H
-#define __INTERNAL_SYSCALL_H
+#ifndef __BVM_INTERNAL_SYSCALL_H
+#define __BVM_INTERNAL_SYSCALL_H
 #include "defines.h"
 #include "vmem.h"
 #include <stdlib.h>

@@ -1,5 +1,5 @@
-#ifndef __INTERNAL_DEBUG_H
-#define __INTERNAL_DEBUG_H
+#ifndef __BVM_INTERNAL_DEBUG_H
+#define __BVM_INTERNAL_DEBUG_H
 #include <stdio.h>
 static int __INTERNAL_DEBUG;
 

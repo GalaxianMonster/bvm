@@ -27,10 +27,10 @@ int main()
     /* Optional: BVM_on_debug() for debugging */
 
     /* execute bytecode */
-    VMState state = BVM_exec(bytecode, sizeof(bytecode));
+    BVM_VMState state = BVM_exec(bytecode, sizeof(bytecode));
 
     /* Check VM State if the Program failed */
-    if(state == VMSTATE_FAIL)
+    if(state == BVM_VMSTATE_FAIL)
     {
         printf("Program failed\n");
     }

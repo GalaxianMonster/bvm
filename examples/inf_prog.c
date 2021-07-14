@@ -32,7 +32,7 @@ int main()
 	};
 
 	/* Execute bytecode and check vm state */
-	if(BVM_exec(bytecode, 3+2+16) == VMSTATE_FAIL)
+	if(BVM_exec(bytecode, 3+2+16) == BVM_VMSTATE_FAIL)
 	{
 		printf("Failed\n");
 	}

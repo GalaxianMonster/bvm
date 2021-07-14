@@ -1,33 +1,33 @@
-#ifndef __INTERNAL_VM_H
-#define __INTERNAL_VM_H
+#ifndef __BVM_INTERNAL_VM_H
+#define __BVM_INTERNAL_VM_H
 #include <stdlib.h>
 #include "defines.h"
 #include "program.h"
 
-#define VMState BYTE
-#define VMSTATE_NS 0
-#define VMSTATE_OK 1
-#define VMSTATE_FAIL 2
+#define BVM_VMState BYTE
+#define BVM_VMSTATE_NS 0
+#define BVM_VMSTATE_OK 1
+#define BVM_VMSTATE_FAIL 2
 
-struct VM_S
+struct BVM_S
 {
     PROG prog;
-    VMState state;
+    BVM_VMState state;
 };
-typedef struct VM_S VM;
+typedef struct BVM_S BVM;
 
-VM new_vm(BYTE* bytecode, QWORD length)
+BVM new_vm(BYTE* bytecode, QWORD length)
 {
-    VM vm;
-    vm.state = VMSTATE_NS;
+    BVM vm;
+    vm.state = BVM_VMSTATE_NS;
     init_prog(&(vm.prog), bytecode, length);
     return vm;
 }
 
-void run_vm(VM* vm)
+void run_vm(BVM* vm)
 {
     DEBUG("run_vm", "starting vm");
-    if(vm->state == VMSTATE_OK || vm->state == VMSTATE_FAIL)
+    if(vm->state != BVM_VMSTATE_NS)
     {
         DEBUG("run_vm", "already ended");
     }
@@ -39,12 +39,12 @@ void run_vm(VM* vm)
         if(res == -1)
         {
             DEBUG("run_vm", "execution failed");
-            vm->state = VMSTATE_FAIL;
+            vm->state = BVM_VMSTATE_FAIL;
         }
         else
         {
             DEBUG("run_vm", "execution success");
-            vm->state = VMSTATE_OK;
+            vm->state = BVM_VMSTATE_OK;
         }
         free_prog(&vm->prog);
     }

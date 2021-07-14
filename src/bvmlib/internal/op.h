@@ -1,5 +1,5 @@
-#ifndef __INTERNAL_OPCODES_H
-#define __INTERNAL_OPCODES_H
+#ifndef __BVM_INTERNAL_OPCODES_H
+#define __BVM_INTERNAL_OPCODES_H
 #include "defines.h"
 #include "limits.h"
 #include "instruction.h"

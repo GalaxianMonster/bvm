@@ -20,7 +20,7 @@ int main()
     	VMState state = BVM_exec(bytecode, 3);
     	
 	/* Check vm state */
-	if(state == VMSTATE_FAIL)
+	if(state == BVM_VMSTATE_FAIL)
     	{
         	printf("Program failed\n");
     	}

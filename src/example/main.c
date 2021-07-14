@@ -101,7 +101,7 @@ int main(int argc, char **argv)
     /* more syscalls here */
 
     /* Execute Bytecode in a VM and check VM State */
-    if(BVM_exec(bc.bytecode, bc.length) == VMSTATE_FAIL)
+    if(BVM_exec(bc.bytecode, bc.length) == BVM_VMSTATE_FAIL)
     {
 
         printf("%s: failed at runtime\n", argv[0]);

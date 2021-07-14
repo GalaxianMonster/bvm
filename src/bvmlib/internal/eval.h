@@ -1,5 +1,5 @@
-#ifndef __INTERNAL_EVAL_H
-#define __INTERNAL_EVAL_H
+#ifndef __BVM_INTERNAL_EVAL_H
+#define __BVM_INTERNAL_EVAL_H
 #include "op.h"
 #include "instruction.h"
 #include "debug.h"

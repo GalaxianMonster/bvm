@@ -1,5 +1,5 @@
-#ifndef __INTERNAL_BYTECODE_H
-#define __INTERNAL_BYTECODE_H
+#ifndef __BVM_INTERNAL_BYTECODE_H
+#define __BVM_INTERNAL_BYTECODE_H
 #include "defines.h"
 #include <stdlib.h>
 #include <string.h>

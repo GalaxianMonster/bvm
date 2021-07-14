@@ -1,11 +1,11 @@
 /* Virtual Memory for the Program */
-#ifndef __INTERNAL_VMEM_H
-#define __INTERNAL_VMEM_H
+#ifndef __BVM_INTERNAL_VMEM_H
+#define __BVM_INTERNAL_VMEM_H
 #include "defines.h"
 #include "limits.h"
 #include "stack.h"
-#ifndef __INTERNAL_VMEM_INST
-#define __INTERNAL_VMEM_INST
+#ifndef __BVM_INTERNAL_VMEM_INST
+#define __BVM_INTERNAL_VMEM_INST
 struct REG_VAL_S
 {
     BYTE* val;

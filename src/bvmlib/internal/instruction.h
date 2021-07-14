@@ -1,12 +1,12 @@
-#ifndef __INTERNAL_INSTRUCTION_H
-#define __INTERNAL_INSTRUCTION_H
+#ifndef __BVM_INTERNAL_INSTRUCTION_H
+#define __BVM_INTERNAL_INSTRUCTION_H
 #include "defines.h" // BYTE
 #include "bytecode.h" // DECODED_BYTECODE
 #include "disasm.h" // DISASM_BYTECODE
 #include "types.h" // types like TYPE_BYTE
-#include "debug.h"
-#ifndef __INTERNAL_INSTRUCTION_INST
-#define __INTERNAL_INSTRUCTION_INST
+#include "debug.h" // Debugging
+#ifndef __BVM_INTERNAL_INSTRUCTION_INST
+#define __BVM_INTERNAL_INSTRUCTION_INST
 struct INSTR_S
 {
     BYTE opcode;

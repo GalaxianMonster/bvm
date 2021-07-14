@@ -1,13 +1,13 @@
-#ifndef __INTERNAL_PROG_H
-#define __INTERNAL_PROG_H
+#ifndef __BVM_INTERNAL_PROG_H
+#define __BVM_INTERNAL_PROG_H
 #include "limits.h"
 #include "defines.h"
 #include <stdlib.h>
 #include "bytecode.h"
 #include "eval.h"
 #include "op.h"
-#ifndef __INTERNAL_PROG_INST
-#define __INTERNAL_PROG_INST
+#ifndef __BVM_INTERNAL_PROG_INST
+#define __BVM_INTERNAL_PROG_INST
 struct PROG_S
 {
 	VMEM mem;

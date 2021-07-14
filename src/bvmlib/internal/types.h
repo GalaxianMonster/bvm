@@ -1,5 +1,5 @@
-#ifndef __INTERNAL_TYPES_H
-#define __INTERNAL_TYPES_H
+#ifndef __BVM_INTERNAL_TYPES_H
+#define __BVM_INTERNAL_TYPES_H
 
 #include "defines.h"
 #include "limits.h"

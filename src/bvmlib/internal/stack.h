@@ -1,10 +1,10 @@
-#ifndef __INTERNAL_STACK_H
-#define __INTERNAL_STACK_H
+#ifndef __BVM_INTERNAL_STACK_H
+#define __BVM_INTERNAL_STACK_H
 #include <stdlib.h>
 #include "defines.h"
 #include <string.h>
-#ifndef __INTERNAL_STACK_INST
-#define __INTERNAL_STACK_INST
+#ifndef __BVM_INTERNAL_STACK_INST
+#define __BVM_INTERNAL_STACK_INST
 struct STACK_ITEM_S
 {
     BYTE* data;

@@ -65,10 +65,10 @@ void BVM_off_debug()
 }
 
 /* Execute Bytecode to BVM */
-VMState BVM_exec(BYTE* bytecode, QWORD length)
+BVM_VMState BVM_exec(BYTE* bytecode, QWORD length)
 {
 
-    VM vm = new_vm(bytecode, length);
+    BVM vm = new_vm(bytecode, length);
 
     run_vm(&vm);
 

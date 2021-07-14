@@ -1,10 +1,10 @@
-#ifndef __INTERNAL_DISASM_H
-#define __INTERNAL_DISASM_H
+#ifndef __BVM_INTERNAL_DISASM_H
+#define __BVM_INTERNAL_DISASM_H
 #include "bytecode.h"
 #include "defines.h"
 
-#ifndef __INTERNAL_DISASM_INST
-#define __INTERNAL_DISASM_INST
+#ifndef __BVM_INTERNAL_DISASM_INST
+#define __BVM_INTERNAL_DISASM_INST
 struct DISASM_BYTECODE_S
 {
     QWORD dec_bclen;
