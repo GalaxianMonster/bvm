@@ -10,14 +10,14 @@ int main()
 {
 
 	/* Initialize BVM */
-    	BVM_init();
+    BVM_init();
 
 	/* Bytecode: exit */
 	/* What it does is only exit */
-    	BYTE bytecode[3] = {0x00, 0x10, 0x00};
+    BYTE bytecode[3] = {0x00, 0x10, 0x00};
 
 	/* Execute Bytecode */
-    	VMState state = BVM_exec(bytecode, 3);
+    BVM_VMState state = BVM_exec(bytecode, 3);
     	
 	/* Check vm state */
 	if(state == BVM_VMSTATE_FAIL)

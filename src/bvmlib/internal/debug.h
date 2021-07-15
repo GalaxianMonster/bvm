@@ -3,7 +3,7 @@
 #include <stdio.h>
 static int __INTERNAL_DEBUG;
 
-int DEBUG(char* func, char* msg)
+int DEBUG(const char* func, const char* msg)
 {
 	if(__INTERNAL_DEBUG == 1)
 	{

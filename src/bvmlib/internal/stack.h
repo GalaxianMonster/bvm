@@ -73,7 +73,7 @@ void stack_push(STACK* stack, BYTE* val, QWORD len)
 }
 void free_stack(STACK* stack)
 {
-    for(QWORD i = 0; i < (stack->cidx+1); ++i)
+    for(QWORD i = 0; i < (QWORD)(stack->cidx+1); ++i)
     {
         free(stack->stk[stack->cidx].data);
     }

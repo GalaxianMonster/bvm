@@ -10,6 +10,9 @@
  */
 #ifndef __BVM_LIB
 #define __BVM_LIB
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include "internal/debug.h"
 #include "internal/defines.h"
 #include "internal/bytecode.h"
@@ -75,4 +78,7 @@ BVM_VMState BVM_exec(BYTE* bytecode, QWORD length)
     return vm.state;
 
 }
+#ifdef __cplusplus
+}
+#endif
 #endif

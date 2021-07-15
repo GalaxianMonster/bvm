@@ -100,7 +100,7 @@ int REG_EXISTS(BYTE reg)
     }
     return 0;
 }
-int CHECK_REG(char* opcode, BYTE reg)
+int CHECK_REG(const char* opcode, BYTE reg)
 {
     if(REG_EXISTS(reg))
     {
@@ -117,7 +117,7 @@ int CHECK_REG(char* opcode, BYTE reg)
     }
     return 0;
 }
-int CHECK_TYPE(char* opcode, BYTE type, BYTE type2)
+int CHECK_TYPE(const char* opcode, BYTE type, BYTE type2)
 {
     if(type != type2)
     {
@@ -128,7 +128,7 @@ int CHECK_TYPE(char* opcode, BYTE type, BYTE type2)
     }
     return 0;
 }
-int CHECK_IMMVAL(char* opcode, INSTR instr)
+int CHECK_IMMVAL(const char* opcode, INSTR instr)
 {
     if(instr.immval_len == 0)
     {
