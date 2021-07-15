@@ -81,6 +81,10 @@ enum ENUM_OP{
     OP_PUSH = 69,
     OP_POP = 70,
     OP_SYSCALL = 71,
+    OP_NEGB = 72,
+    OP_NEGW = 73,
+    OP_NEGDW = 74,
+    OP_NEGQW = 75
 };
 typedef enum ENUM_OP OPCODE;
 static int (*FUNC_OP[OPCODE_MAX])(VMEM*,  INSTR);
@@ -1290,6 +1294,54 @@ int FUNC_OP_POP(VMEM* mem, INSTR instr)
     mov_reg(mem, instr.reg1, bytes, 1);
     return 1;
 }
+int FUNC_OP_NEGB(VMEM* mem, INSTR instr)
+{
+    DEBUG("FUNC_OP_NEGB", "negb: instruction started");
+    check_fail(CHECK_REG("negb", instr.reg1));
+    check_fail(CHECK_TYPE("negb", get_reg_type(mem, instr.reg1), TYPE_BYTE));
+    check_fail(CHECK_REG("negb", instr.reg2));
+    check_fail(CHECK_TYPE("negb", get_reg_type(mem, instr.reg2), TYPE_BYTE));
+    REG_VAL reg2_val = get_reg(mem, instr.reg2);
+    BYTE res = ~(to_byte(reg2_val.val));
+    mov_reg(mem, instr.reg1, b_to_bytes(res), 1);
+    return 1;
+}
+int FUNC_OP_NEGW(VMEM* mem, INSTR instr)
+{
+    DEBUG("FUNC_OP_NEGW", "negw: instruction started");
+    check_fail(CHECK_REG("negw", instr.reg1));
+    check_fail(CHECK_TYPE("negw", get_reg_type(mem, instr.reg1), TYPE_WORD));
+    check_fail(CHECK_REG("negw", instr.reg2));
+    check_fail(CHECK_TYPE("negw", get_reg_type(mem, instr.reg2), TYPE_WORD));
+    REG_VAL reg2_val = get_reg(mem, instr.reg2);
+    WORD res = ~(to_word(reg2_val.val));
+    mov_reg(mem, instr.reg1, w_to_bytes(res), 2);
+    return 1;
+}
+int FUNC_OP_NEGDW(VMEM* mem, INSTR instr)
+{
+    DEBUG("FUNC_OP_NEGDW", "negdw: instruction started");
+    check_fail(CHECK_REG("negdw", instr.reg1));
+    check_fail(CHECK_TYPE("negdw", get_reg_type(mem, instr.reg1), TYPE_DWORD));
+    check_fail(CHECK_REG("negdw", instr.reg2));
+    check_fail(CHECK_TYPE("negdw", get_reg_type(mem, instr.reg2), TYPE_DWORD));
+    REG_VAL reg2_val = get_reg(mem, instr.reg2);
+    DWORD res = ~(to_dword(reg2_val.val));
+    mov_reg(mem, instr.reg1, dw_to_bytes(res), 4);
+    return 1;
+}
+int FUNC_OP_NEGQW(VMEM* mem, INSTR instr)
+{
+    DEBUG("FUNC_OP_NEGQW", "negqw: instruction started");
+    check_fail(CHECK_REG("negqw", instr.reg1));
+    check_fail(CHECK_TYPE("negqw", get_reg_type(mem, instr.reg1), TYPE_QWORD));
+    check_fail(CHECK_REG("negqw", instr.reg2));
+    check_fail(CHECK_TYPE("negqw", get_reg_type(mem, instr.reg2), TYPE_QWORD));
+    REG_VAL reg2_val = get_reg(mem, instr.reg2);
+    QWORD res = ~(to_qword(reg2_val.val));
+    mov_reg(mem, instr.reg1, qw_to_bytes(res), 8);
+    return 1;
+}
 void init_op_functions()
 {
     DEBUG("init_op_functions", "initializing op functions");
@@ -1366,6 +1418,10 @@ void init_op_functions()
     FUNC_OP[OP_POP] = FUNC_OP_POP;
     FUNC_OP[OP_PUSH] = FUNC_OP_PUSH;
     FUNC_OP[OP_SYSCALL] = FUNC_OP_SYSCALL;
+    FUNC_OP[OP_NEGB] = FUNC_OP_NEGB;
+    FUNC_OP[OP_NEGW] = FUNC_OP_NEGW;
+    FUNC_OP[OP_NEGDW] = FUNC_OP_NEGDW;
+    FUNC_OP[OP_NEGQW] = FUNC_OP_NEGQW;
     DEBUG("init_op_functions", "operation done");
 }
 #endif

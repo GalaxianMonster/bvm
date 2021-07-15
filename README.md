@@ -42,3 +42,10 @@ then if you wanna turn it off
 ```bash
 unset BVMDEBUG
 ```
+
+## Other
+<a href="RELEASE_INFO.md">Info for all releases</a>
+<br>
+<a href="tutorials/Introduction.md">Tutorials</a>
+<br>
+<a href="LICENSE">License</a>
