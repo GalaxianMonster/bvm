@@ -4,6 +4,10 @@ Basic Virtual Machine(BVM) is a Bytecode Virtual Machine Implementation
 Still in development(Linux)
 
 ## Installation
+
+**Install using the repo**
+<br>
+bash:
 ```
 git clone https://github.com/GalaxianMonster/bvm.git
 cd bvm
@@ -11,6 +15,19 @@ cd bvm
 cd ..
 rm -r bvm
 ```
+
+**Install from the release**
+<br>
+bash using the installer(needs internet) for bvm:
+```
+curl -L https://raw.githubusercontent.com/GalaxianMonster/bvm/master/installer.sh -o installer.sh
+bash installer.sh <version here>
+```
+You can also download the release manually and
+<br>
+put it to /usr/local/include/bvmlib(Linux) or just add the directory to 
+<br>
+your compiler includes
 
 ## Download the repo
 You can either download the source code
