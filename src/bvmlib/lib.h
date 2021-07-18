@@ -29,7 +29,7 @@ extern "C" {
 
 #include "internal/vm.h"
 
-#define BVMLIB_VERSION "1.0.1"
+#define BVMLIB_VERSION "1.1.0"
 
 /* Initialize BVM */
 void BVM_init()
