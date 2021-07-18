@@ -4,7 +4,7 @@
 # File: install.sh
 # Description: install bvmlib into the system
 
-BVMLIB_VERSION="1.0.1"
+BVMLIB_VERSION="1.1.0"
 echo "Installing bvmlib version $BVMLIB_VERSION"
 
 if [ -d "/usr/local/include/bvmlib" ];
