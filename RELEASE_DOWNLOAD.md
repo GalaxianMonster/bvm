@@ -7,3 +7,5 @@ Not available
 Download/Install via installer.sh for Linux
 <br>
 Release: <a href="https://github.com/GalaxianMonster/bvm/releases/tag/1.1.0">BVM Library 1.1.0</a>
+## 1.1.1
+Not released yet

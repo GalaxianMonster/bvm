@@ -5,3 +5,5 @@ The first version
 Did some fix in the headers and added a C++ Example
 ## 1.1.0
 Added opcodes like NEGB, NEGW, NEGDW, NEGQW for negating
+## 1.1.1
+Fixed bvmlib/internal/types.h
