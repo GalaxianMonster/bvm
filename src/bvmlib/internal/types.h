@@ -82,6 +82,7 @@ BYTE get_val_type(QWORD len)
 BYTE* b_to_bytes(BYTE byte)
 {
     BYTE* bytes = (BYTE*)malloc(sizeof(BYTE));
+    memset(bytes, 0, sizeof(bytes));
     bytes[0] = byte;
     return bytes;
 }
@@ -89,6 +90,7 @@ BYTE* b_to_bytes(BYTE byte)
 BYTE* w_to_bytes(WORD word)
 {
     BYTE* bytes = (BYTE*)malloc(sizeof(WORD));
+    memset(bytes, 0, sizeof(bytes));
     bytes[0] |= (word & 0xFF00) >> 8;
     bytes[1] |= (word & 0x00FF);
     return bytes;
@@ -97,6 +99,7 @@ BYTE* w_to_bytes(WORD word)
 BYTE* dw_to_bytes(DWORD dword)
 {
     BYTE* bytes = (BYTE*)malloc(sizeof(DWORD));
+    memset(bytes, 0, sizeof(bytes));
     bytes[0] |= (dword & 0xFF000000) >> 3*8;
     bytes[1] |= (dword & 0x00FF0000) >> 2*8;
     bytes[2] |= (dword & 0x0000FF00) >> 8;
@@ -107,6 +110,7 @@ BYTE* dw_to_bytes(DWORD dword)
 BYTE* qw_to_bytes(QWORD qword)
 {
     BYTE* bytes = (BYTE*)malloc(sizeof(QWORD));
+    memset(bytes, 0, sizeof(bytes));
     bytes[0] |= (qword & 0xFF00000000000000) >> 7*8;
     bytes[1] |= (qword & 0x00FF000000000000) >> 6*8;
     bytes[2] |= (qword & 0x0000FF0000000000) >> 5*8;
