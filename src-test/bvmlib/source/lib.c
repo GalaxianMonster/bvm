@@ -8,28 +8,26 @@
  * Description: Interface for interacting with BVM
  * 
  */
-#ifndef __BVM_LIB
-#define __BVM_LIB
-#ifdef __cplusplus
-extern "C" {
-#endif
-#include "internal/debug.h"
-#include "internal/defines.h"
-#include "internal/bytecode.h"
-#include "internal/limits.h"
 
-#include "internal/vmem.h"
-#include "internal/types.h"
-#include "internal/eval.h"
-#include "internal/program.h"
+#include <stdlib.h>
 
-#include "internal/op.h"
-#include "internal/instruction.h"
-#include "internal/syscall.h"
+#include "../include/internal/bytecode.h"
+#include "../include/internal/debug.h"
+#include "../include/internal/defines.h"
+#include "../include/internal/disasm.h"
+#include "../include/internal/eval.h"
+#include "../include/internal/instruction.h"
+#include "../include/internal/limits.h"
+#include "../include/internal/op.h"
+#include "../include/internal/program.h"
+#include "../include/internal/stack.h"
+#include "../include/internal/syscall.h"
+#include "../include/internal/types.h"
+#include "../include/internal/vmem.h"
+#include "../include/internal/debug.h"
+#include "../include/internal/vm.h"
 
-#include "internal/vm.h"
-
-#define BVM_HEADER_ONLY
+#include "../include/lib.h"
 
 #define BVMLIB_VERSION "1.1.2"
 
@@ -80,6 +78,7 @@ BVM_VMState BVM_exec(BYTE* bytecode, QWORD length)
     return vm.state;
 
 }
+
 int BVM_debugging()
 {
     return __INTERNAL_DEBUG;
@@ -88,7 +87,3 @@ char* BVM_get_lib_version()
 {
     return BVMLIB_VERSION;
 }
-#ifdef __cplusplus
-}
-#endif
-#endif

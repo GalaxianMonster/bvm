@@ -21,16 +21,16 @@ int main()
     	
 	/* Check vm state */
 	if(state == BVM_VMSTATE_FAIL)
-    	{
-        	printf("Program failed\n");
-    	}
-    	else
-    	{
-        	printf("Program successful\n");
-    	}
+    {
+    	printf("Program failed\n");
+	}
+    else
+    {
+    	printf("Program successful\n");
+    }
 
 	/* Do some cleaning */
-    	BVM_cleanup();
+    BVM_cleanup();
     	
 	return 0;
 

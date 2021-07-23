@@ -11,6 +11,7 @@ You dont need to initialize bvm since it just set __INTERNAL_DEBUG to 1
 ```c
 /* Include BVM Library Interface */
 #include "bvmlib/lib.h"
+#include <stdio.h>
 
 
 int main()
@@ -28,6 +29,10 @@ int main()
     /* Turn off debugging since we are done(optional) */
 
     BVM_off_debug();
+
+    /* Write to stdout if debugging is enabled */
+
+    printf("Debugging: %s\n", (BVM_debugging() == 0) ? "False" : "True");
 
     /* some code for cleanup here */
 

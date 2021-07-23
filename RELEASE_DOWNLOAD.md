@@ -11,3 +11,5 @@ Release: <a href="https://github.com/GalaxianMonster/bvm/releases/tag/1.1.0">BVM
 Download/Install via installer.sh for Linux
 <br>
 Release: <a href="https://github.com/GalaxianMonster/bvm/releases/tag/1.1.1">BVM Library 1.1.1</a>
+## 1.1.2
+BVMLIB 1.1.2 Release will be uploaded later

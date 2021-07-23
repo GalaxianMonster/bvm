@@ -7,3 +7,5 @@ Did some fix in the headers and added a C++ Example
 Added opcodes like NEGB, NEGW, NEGDW, NEGQW for negating
 ## 1.1.1
 Fixed bvmlib/internal/types.h
+## 1.1.2
+Added functions for BVMLIB interface
