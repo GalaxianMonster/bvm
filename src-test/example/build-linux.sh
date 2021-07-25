@@ -5,7 +5,7 @@ OUT="../../bin/bvm-linux-test"
 CFLAGS="-lbvm -Wall -O2" # -lbvm-static for the static library
 
 function build() {
-    "$CC"  $CFLAGS -o "$OUT" $CFILES
+    "$CC"  -o "$OUT" $CFILES $CFLAGS
 }
 
 build
