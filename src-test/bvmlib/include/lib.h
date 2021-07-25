@@ -3,6 +3,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+#include "internal/exports.h"
 #include "internal/bytecode.h"
 #include "internal/debug.h"
 #include "internal/defines.h"
@@ -18,13 +19,13 @@ extern "C" {
 #include "internal/vm.h"
 #include "internal/vmem.h"
 #define BVMINCLUDE_VERSION "1.1.2"
-BVM_VMState BVM_exec(BYTE *bytecode,QWORD length);
-void BVM_off_debug();
-void BVM_on_debug();
-void BVM_cleanup();
-void BVM_init();
-int BVM_debugging();
-char* BVM_get_lib_version();
+BVMLIB_DECL BVM_VMState BVM_exec(BYTE *bytecode,QWORD length);
+BVMLIB_DECL void BVM_off_debug();
+BVMLIB_DECL void BVM_on_debug();
+BVMLIB_DECL void BVM_cleanup();
+BVMLIB_DECL void BVM_init();
+BVMLIB_DECL int BVM_debugging();
+BVMLIB_DECL char* BVM_get_lib_version();
 #ifdef __cplusplus
 }
 #endif

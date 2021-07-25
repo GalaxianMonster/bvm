@@ -1,9 +1,10 @@
 #ifndef __BVM_INTERNAL_INSTRUCTION
 #define __BVM_INTERNAL_INSTRUCTION
 #include "disasm.h"
+#include "exports.h"
 #ifndef __BVM_INTERNAL_INSTRUCTION_INST
 #define __BVM_INTERNAL_INSTRUCTION_INST
-struct INSTR_S
+BVMLIB_DECL struct INSTR_S
 {
     BYTE opcode;
     BYTE reg1;
@@ -16,5 +17,5 @@ struct INSTR_S
 
 typedef struct INSTR_S INSTR;
 #endif
-int new_instr(INSTR *instr,DISASM_BYTECODE disasm_bc,QWORD c);
+BVMLIB_DECL int new_instr(INSTR *instr,DISASM_BYTECODE disasm_bc,QWORD c);
 #endif

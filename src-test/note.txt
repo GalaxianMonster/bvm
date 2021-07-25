@@ -1,0 +1,25 @@
+NOTE FOR "src-test" FOLDER
+==========================
+
+FILES IN THIS FOLDER CONTAIN
+IN-DEV FILES FOR BVMLIB
+--------------------------
+--------------------------
+
+
+FOLDER "bvmlib":
+	CONTAINS SOURCE CODE
+	FOR UPCOMING BVM
+	NON-HEADER-ONLY LIB
+
+--------------------------
+
+FOLDER "example":
+	CONTAINTS BVM
+	EXAMPLE BVM PROGRAM
+	THAT USES THE
+	NON-HEADER-ONLY BVM
+	LIB
+
+==========================
+END
