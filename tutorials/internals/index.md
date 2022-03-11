@@ -1,2 +1,2 @@
-# Oops, Not Finish Yet
-Come back soon until its done :)
+# Not continued
+I don't have time to add tutorials for this topic :(
