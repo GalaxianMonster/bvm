@@ -7,7 +7,7 @@ int DEBUG(const char* func, const char* msg)
 {
 	if(__INTERNAL_DEBUG == 1)
 	{
-		return printf("[INTERNAL_DEBUG]<%s>: %s\n", func, msg);
+		return printf("[BVM_INTERNAL_DEBUG]<%s>: %s\n", func, msg);
 	}
 	else
 	{
