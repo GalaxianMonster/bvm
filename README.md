@@ -1,7 +1,8 @@
 # bvm
+<b>NOTE: This repository is only for 1.1.2 to 1.1.9 development as the 1.2 update will basically be different</b><br>
 Basic Virtual Machine(BVM) is a Bytecode Virtual Machine Implementation
 <br>
-Still in development(Linux)
+WIP (Development on Linux)
 
 ## Installation
 
